@@ -23,5 +23,6 @@ RUN pip3 install --no-cache-dir --upgrade pip setuptools gunicorn
 RUN pip3 install --no-cache-dir -r sainibots.txt \
     && python3 -m pip install -U yt-dlp
 
-# Set the command
-CMD ["sh", "-c", "gunicorn app:app & python3 main.py"]
+# Run the web app and the bot using python3 directly
+CMD python3 app.py & python3 main.py
+
