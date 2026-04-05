@@ -1093,10 +1093,6 @@ async def txt_handler(bot: Client, m: Message):
         channel_id = raw_text7    
     await editable.delete()
 
-    await editable.edit("`🔹Enter Your PW Token For 𝐌𝐏𝐃 𝐔𝐑𝐋\n🔹Otherwise Send Anything.`")
-    input4: Message = await bot.listen(editable.chat.id)
-    raw_text8 = input8.text
-    await input8.delete(True)
     
     try:
         if raw_text == "1":
@@ -1181,10 +1177,10 @@ async def txt_handler(bot: Client, m: Message):
                 url = url.split("bcov_auth")[0]+bcov
                 
             elif "childId" in url and "parentId" in url:
-                url = f"https://anonymouspwplayer-907e62cf4891.herokuapp.com/pw?url={url}&token={raw_text8}"
+                url = f"https://anonymouspwplayer-907e62cf4891.herokuapp.com/pw?url={url}&token={pwtoken}"
                            
             elif "d1d34p8vz63oiq" in url or "sec1.pw.live" in url:
-                url = f"https://anonymouspwplayer-907e62cf4891.herokuapp.com/pw?url={url}?token={raw_text8}"
+                url = f"https://anonymouspwplayer-907e62cf4891.herokuapp.com/pw?url={url}?token={pwtoken}"
 
             if ".pdf*" in url:
                 url = f"https://dragoapi.vercel.app/pdf/{url}"
